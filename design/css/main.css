@@ -1,0 +1,276 @@
+:root {
+    --purple-primary: hsl(259, 100%, 65%);
+    --light-red-primary: hsl(0, 100%, 67%);
+    --white-neutral: hsl(0, 0%, 100%);
+    --off-white-neutral: hsl(0, 0%, 94%);
+    --light-gray-neutral: hsl(0, 0%, 86%);
+    --smokey-gray-neutral: hsl(0, 1%, 44%);
+    --off-black-neutral: hsl(0, 0%, 8%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray-neutral);
+    height: calc(100% - 25px);
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 481px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+.content {
+    position: relative;
+    background-color: var(--white-neutral);
+    width: 600px;
+    height: 500px;
+    border-radius: 20px 20px 150px 20px;
+    padding: 30px;
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 20px;
+        width: 100%;
+        height: 450px;
+    }
+}
+
+form {
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--off-white-neutral);
+}
+
+@media (max-width: 768px) {
+    form {
+        display: block;
+        height: 120px;
+        padding-bottom: 150px;
+    }
+}
+
+.mob {
+    display: flex;
+    gap: 20px;
+}
+
+form label {
+    font-size: 11px;
+    color: var(--smokey-gray-neutral);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    form label {
+        font-size: 9px;
+    }
+}
+
+form input {
+    display: inline-block;
+    color: var(--off-black-neutral);
+    width: 100%;
+    height: 40px;
+    padding: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--off-white-neutral);
+    caret-color: var(--purple-primary);
+    font-size: 24px;
+    font-weight: bold;
+    height: 50px;
+    cursor: pointer;
+}
+
+form input:hover {
+    border-color: var(--purple-primary);
+}
+
+@media (max-width: 480px) {
+    form input {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--purple-primary);
+}
+
+form button {
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--purple-primary);
+    width: 70px;
+    height: 70px;
+}
+
+form button:hover {
+    background-color: var(--off-black-neutral);
+}
+
+@media (max-width: 768px) {
+    form button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media (min-width: 769px) {
+
+    .day,
+    .mon,
+    .year {
+        width: 25%;
+    }
+}
+
+.error label {
+    color: var(--light-red-primary) !important;
+}
+
+.error input {
+    border-color: var(--light-red-primary) !important;
+}
+
+.mob span {
+    display: none;
+    font-size: 10px;
+    font-style: italic;
+    color: var(--light-red-primary);
+    font-weight: 400;
+    font-style: italic;
+}
+
+@media (max-width: 480px) {
+    .mob span {
+        font-size: 8px;
+    }
+}
+
+.error span {
+    display: block;
+}
+
+.btn {
+    position: relative;
+    top: 77px;
+    left: 0px;
+}
+
+.btn.error {
+    top: 94px;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        position: absolute;
+        top: 155px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: -moz-fit-content;
+        width: fit-content;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn.error {
+        top: 155px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        top: 145px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn.error {
+        top: 145px;
+    }
+}
+
+svg {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.result {
+    position: relative;
+    top: 40px;
+    color: var(--off-black-neutral);
+    font-weight: 900;
+    font-style: italic;
+}
+
+@media (max-width: 480px) {
+    .result {
+        font-size: 48px;
+    }
+}
+
+@media (min-width: 481px) {
+    .result {
+        font-size: 58px;
+    }
+}
+
+@media (min-width: 769px) {
+    .result {
+        font-size: 64px;
+    }
+}
+
+.result span {
+    color: var(--purple-primary);
+}
+
+.attribution {
+    background-color: var(--light-gray-neutral);
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .attribution {
+        font-size: 12px;
+    }
+}
