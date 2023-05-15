@@ -106,7 +106,7 @@ function yearVAlidation() {
         year.classList.add('error');
         yearSpan.textContent = "Must be in the past"
 
-    } else if (yearInput.value == currentYear && monthInput.value >= currentMonth) {
+    } else if (yearInput.value == currentYear && monthInput.value > currentMonth + 1) {
 
         yearValid = false;
         year.classList.add('error');
