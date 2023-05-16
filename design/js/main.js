@@ -35,7 +35,7 @@ form.onsubmit = function (e) {
     dateValidation();
     monthValidation();
     dayValidation();
-    emptyValidation(e);
+    // emptyValidation(e);
 
     e.preventDefault();
     getResult();
@@ -45,13 +45,13 @@ form.onsubmit = function (e) {
 
 }
 
-function emptyValidation (e) {
+// function emptyValidation (e) {
 
-    if (dayValid === false || monthValid === false || yearValid === false) {
-        e.preventDefault();
+//     if (dayValid === false || monthValid === false || yearValid === false) {
+//         e.preventDefault();
 
-    }
-}
+//     }
+// }
 
 function dayValidation() {
 
@@ -86,6 +86,7 @@ function monthValidation() {
         monthSpan.textContent = "Must be a valid month"
 
     } else {
+        console.log('valid from mon validation')
         monthValid = true;
         month.classList.remove('error');
     }
@@ -107,6 +108,7 @@ function yearVAlidation() {
         yearSpan.textContent = "Must be in the past"
 
     } else if (yearInput.value == currentYear && monthInput.value > currentMonth + 1) {
+
 
         yearValid = false;
         year.classList.add('error');
@@ -149,18 +151,34 @@ function dateValidation() {
 
 function getResult() {
     
-    let years = currentYear - Number(yearInput.value) - 1;
-    let months = currentMonth + 12 - Number(monthInput.value);
-    let days = 30 - Number(dayInput.value) + currentDay;
+    let years = currentYear - Number(yearInput.value);
+    let months = 0;
+    let days = 0;
+    if (monthInput.value > (currentMonth + 1)) {
+
+        months = 12 - (Number(monthInput.value) - (currentMonth + 1));
+    } else {
+
+        months = (currentMonth + 1) - monthInput.value;
+    }
+
+    if (dayInput.value > currentDay) {
+
+        days = 30 - (Number(dayInput.value ) - currentDay)
+    } else {
+
+        days = currentDay - dayInput.value;
+
+    }
 
     if ((dayValid && monthValid && yearValid) === true) {
 
-        if (months >= 12) {
+        if (months == 12) {
 
             years += 1;
             months -= 12; 
         }
-    
+
         if (days >= 30) {
             
             months += 1;
@@ -172,14 +190,26 @@ function getResult() {
             months = 0;
             days = 0;
         }
-    
+
+        if (yearInput.value < currentYear) {
+
+            if (monthInput.value >  (currentMonth + 1)) {
+
+                years -= 1
+            } else if (currentMonth + 1 == monthInput.value && currentDay < dayInput.value) {
+
+                years -= 1;
+            }
+        }
+
+        if (dayInput.value > currentDay) {
+
+            months -= 1;
+        }
+
         dayInput.value = '';
         monthInput.value = '';
         yearInput.value = '';
-        
-        // resultDay.textContent = days;
-        // resultMonth.textContent = months;
-        // resultYear.textContent = years;
 
         resultDay.dataset.num = days;
         resultMonth.dataset.num = months;
