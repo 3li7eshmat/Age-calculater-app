@@ -35,7 +35,6 @@ form.onsubmit = function (e) {
     dateValidation();
     monthValidation();
     dayValidation();
-    // emptyValidation(e);
 
     e.preventDefault();
     getResult();
@@ -44,14 +43,6 @@ form.onsubmit = function (e) {
     animateNumbers();
 
 }
-
-// function emptyValidation (e) {
-
-//     if (dayValid === false || monthValid === false || yearValid === false) {
-//         e.preventDefault();
-
-//     }
-// }
 
 function dayValidation() {
 
