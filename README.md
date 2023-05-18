@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://www.frontendmentor.io/solutions/age-calculator-app-2RNbSfVW5B)
+- Live Site URL: (https://3li7eshmat.github.io/Age-calculater-app/)
 
 ## My process
 
@@ -57,7 +57,6 @@ I want to continue focusing on improve my proplem solving skill on java script.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@3li7eshmat](https://www.frontendmentor.io/profile/3li7eshmat)
+- GitHub - [@3li7eshmat](https://github.com/3li7eshmat)
 
